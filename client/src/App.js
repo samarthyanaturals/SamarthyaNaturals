@@ -31,6 +31,9 @@ import CreateBanner from './pages/Admin/CreateBanner';
 import BannerPage from './pages/BannerPage';
 import FavouritePage from './pages/FavouritePage';
 import Shop from './pages/Shop';
+import Blog from './pages/Blog';
+import Terms from './pages/Terms';
+import Refund from './pages/Refund';
 
 function App() {
   return (
@@ -64,8 +67,11 @@ function App() {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/about" element={<About />} />
         <Route path="/shop" element={<Shop />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/shop" element={<Shop />} />
+        <Route path="/blog" element={<Blog/>} />
         <Route path="/policy" element={<Policy />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/refund" element={<Refund />} />
         <Route path="*" element={<Pagenotfound />} />
       </Routes>
     </>

@@ -22,18 +22,21 @@ const SearchInput = () => {
   };
 
   return (
-    <div className="hero__search">
-      <div className="hero__search__form">
-        <form onSubmit={handleSubmit}>
-          <div className="hero__search__categories">
+    <div className="herosearch">
+      <div className="herosearchform">
+        <form onSubmit={handleSubmit} style={{display:"flex",justifyContent:'center',width:'100%'}}>
+          {/* <div className="hero__search__categories">
             All Categories
             <span className="arrow_carrot-down"></span>
-          </div>
+          </div> */}
           <input
             type="text"
+            id="inp"
             placeholder="What do you need?"
             value={values.keyword}
             onChange={(e) => setValues({ ...values, keyword: e.target.value })}
+            width={'100%'}
+            // style={{padding:20,paddingInline:'30%'}}
           />
           <button type="submit" className="site-btn">
             {/* <FaSearch color="white"/> */}

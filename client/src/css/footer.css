@@ -22,13 +22,15 @@ footer {
 
 .footer__about__logo {
 	margin-bottom: 15px;
-	height: 50%;
+	height: 90%;
 	width: 50%;
 
 }
 
 .footer__about__logo a img{
 	margin-left: 50%;
+	height: 12vw;
+	width: 30vw;
 }
 .footer__about__logo a {
 	display: inline-block;

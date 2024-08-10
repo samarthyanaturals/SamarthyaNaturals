@@ -9,24 +9,29 @@ body {
 
 .container {
   margin: 0 auto;
-  margin-top: 1%;
+  margin-top: 0%;
   margin-bottom: 1%;
   padding: 0 15px;
   display: flex;
   /* justify-content: space-between; */
   align-items: center;
   height: 100%;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(234, 232, 232,0.2);
   box-shadow: none;
+  z-index: 100;
+
 }
 
 .navbar {
   padding: 0%;
   height: 60px;
-  background-color: white;
+  background-color: transparent;
   box-shadow: none;
   position: relative;
   border: 1 px solid white;
+  position: sticky;
+  top: 0%;
+  z-index: 1000;
 }
 
 .logo {
@@ -56,12 +61,14 @@ body {
 
 .nav-elements ul li:not(:last-child) {
   margin-right: 60px;
+
 }
 
 .nav-elements ul a {
   font-size: 16px;
   font-weight: 700;
-  color: #2f234f;
+  color: #137c44;
+  background-color: transparent;
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -85,6 +92,7 @@ body {
 @media (max-width: 768px) {
   .nav-elements ul li:not(:last-child) {
     margin-right: 30px;
+    padding-left: 3%;
   }
 }
 

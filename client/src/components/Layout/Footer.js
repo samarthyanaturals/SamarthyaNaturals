@@ -6,6 +6,7 @@ import { FaPinterest } from "react-icons/fa";
 import logo from './image/logo.png';
 import payment from './image/payment-item.png'
 import '../../css/footer.css'
+import { FaHeart } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -19,9 +20,9 @@ const Footer = () => {
             <a href="./index.html"><img src={logo}/></a>
           </div>
           <ul>
-            <li>Address: 60-49 Road 11378 New York</li>
-            <li>Phone: +65 11.188.888</li>
-            <li>Email: hello@mail.com</li>
+            <li>Address: Chak 6.s.t.b. , Teh. Sri vijaynagar,distt. Anupgarh, state Rajasthan</li>
+            <li>Phone: +91 83026 57922</li>
+            <li>Email: samarthyanaturals@mail.com</li>
           </ul>
         </div>
       </div>
@@ -32,9 +33,9 @@ const Footer = () => {
             <li><a href="#">About Us</a></li>
             <li><a href="#">About Our Shop</a></li>
             <li><a href="#">Secure Shopping</a></li>
-            <li><a href="#">Delivery infomation</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Our Sitemap</a></li>
+            <li><a href="/terms">Terms and Conditions</a></li>
+            <li><a href="/policy">Privacy Policy</a></li>
+            <li><a href="/refund">Refund Policy</a></li>
           </ul>
           <ul>
             <li><a href="#">Who We Are</a></li>
@@ -69,7 +70,9 @@ const Footer = () => {
       <div className="col-lg-12">
         <div className="footer__copyright">
           <div className="footer__copyright__text"><p>{/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
-              Copyright ©2024 All rights reserved | by Samarthya Naturals
+              Copyright ©2024 All rights reserved | Made with <FaHeart color={'red'}/> by <a href='https://aiwithvanshika.tech/' target='newpage'
+              style={{textDecoration:'underline'}}
+              >AIwithVanshika</a>
               {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}</p></div>
           <div className="footer__copyright__payment"><img src={payment}/></div>
         </div>

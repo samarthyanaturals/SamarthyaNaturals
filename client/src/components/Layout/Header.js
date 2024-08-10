@@ -11,6 +11,7 @@ import { FaCartShopping } from "react-icons/fa6";
 import Hamburger from './Hamburger';
 import './Navbar.css';
 import { FaRegHeart } from "react-icons/fa";
+import logo from './image/logo.png'
 
 const Header = () => {
   const [showNavbar, setShowNavbar] = useState(false);
@@ -58,8 +59,8 @@ const Header = () => {
     <>
       <nav className="navbar">
         <div className="container">
-          <div className="logo">
-            Samarthya Naturals
+          <div className="logo" style={{width:'20%'}}>
+            <img src={logo} width={'100%'}></img>
           </div>
           <div className="menu-icon" onClick={handleShowNavbar}>
             <Hamburger />
@@ -114,13 +115,16 @@ const Header = () => {
                 )}
               </div>
               <li>
+                <NavLink to="/blog">Blog</NavLink>
+              </li>
+              <li>
                 <NavLink to="/contact">Contact</NavLink>
               </li>
 
               <li style={{ marginRight: 20 }}>
-                <button type="button" className="position-relative btn btn-light p-0" style={{ lineHeight: '20px' }}>
+                <button type="button" className="position-relative btn  p-0" style={{ lineHeight: '20px' }}>
                   <NavLink to="/cart" className="nav-link">
-                    <FaCartShopping size={22} />
+                    <FaCartShopping size={22} color='#00db1a'/>
                     <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
                       {cart?.length}
                       <span className="visually-hidden">unread messages</span>
@@ -129,9 +133,9 @@ const Header = () => {
                 </button>
               </li>
               <li>
-                <button type="button" className="position-relative btn btn-light p-0" style={{ lineHeight: '35px' }}>
+                <button type="button" className="position-relative btn p-0" style={{ lineHeight: '35px' }}>
                   <NavLink to="/favourite" className="nav-link">
-                    <FaRegHeart fontSize={22} />
+                    <FaRegHeart fontSize={22} color='#00db1a'/>
                     <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
                       {favorites?.length}
                       <span className="visually-hidden">unread messages</span>

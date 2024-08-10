@@ -14,11 +14,18 @@ import BannerPage from './BannerPage';
 import CategoryDropDown from '../components/Layout/CategoryDropdown/CategoryDropDown';
 import './../css/Homepage.css';
 import banner from './image/banner.jpg';
+import demo1 from './image/demo1.png';
 import { GrPrevious } from "react-icons/gr";
 import { GrNext } from "react-icons/gr";
 import { FaInfoCircle } from "react-icons/fa";
 import { IoMdCart } from "react-icons/io";
 import { FaHeart } from "react-icons/fa";
+import { IoMdHeart } from "react-icons/io";
+import MainSlider from '../components/MainSlider';
+
+import V1 from './Video/WelCome_Samarthya.mp4'
+import V2 from './Video/v2.mp4'
+import V3 from './Video/V3.mp4'
 
 const HomePage = () => {
   const [cart, setCart] = useCart();
@@ -62,21 +69,23 @@ const HomePage = () => {
     getAllProducts();
   }, []);
 
+  //get products
   const getAllProducts = async () => {
     try {
       setLoading(true);
       const { data } = await axios.get(`/api/v1/product/product-list/${page}`);
       setLoading(false);
-      setProducts((prevProducts) => [...prevProducts, ...data.products]);
+      setProducts(data.products);
     } catch (error) {
       setLoading(false);
       console.log(error);
     }
   };
 
+  //getTOtal COunt
   const getTotal = async () => {
     try {
-      const { data } = await axios.get('/api/v1/product/product-count');
+      const { data } = await axios.get("/api/v1/product/product-count");
       setTotal(data?.total);
     } catch (error) {
       console.log(error);
@@ -85,8 +94,19 @@ const HomePage = () => {
 
   useEffect(() => {
     if (page === 1) return;
-    getAllProducts();
+    loadMore();
   }, [page]);
+  const loadMore = async () => {
+    try {
+      setLoading(true);
+      const { data } = await axios.get(`/api/v1/product/product-list/${page}`);
+      setLoading(false);
+      setProducts([...products, ...data?.products]);
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+    }
+  };
 
   const handleFilter = (value, id) => {
     let all = [...checked];
@@ -152,11 +172,11 @@ const HomePage = () => {
     getAllBanners();
   }, []);
 
-  
+
   return (
     <Lay title={'All Products - Best Offers'}>
-      <div className="container-fluid row mt-3">
-        <div className="col-md-2">
+      <div className="" >
+        {/* <div className="col-md-2">
           <CategoryDropDown categories={categories} handleFilter={handleFilter} />
         </div>
         <div className="col-md-9 mt-2">
@@ -169,8 +189,26 @@ const HomePage = () => {
               <SearchInput />
             </div>
           </center>
+        </div> */}
+
+        {/* ==========Welcome========= */}
+        <video autoPlay muted loop style={{ marginTop: '-10%', width: '100%', zIndex: '-1' }}>
+          <source src={V1} />
+        </video>
+        {/* ===========Welcome End======== */}
+        <div style={{ width: '100%' }} id='ProductShow'>
+          <img src={demo1} />
         </div>
-        <div className="shop">
+
+        {/* ============Main Slider======= */}
+        <div style={{ width: '100%', display: 'block' }}>
+          <MainSlider style={{ width: '100vw', padding: 0, margin: 0 }} />
+        </div>
+        {/* =============Main Slider End========= */}
+
+        {/* =========Shop Card========= */}
+
+        {/* <div className="shop mt-2">
           <div className="left"></div>
           <div className="right">
             <h5>FRUIT FRESH</h5>
@@ -178,9 +216,34 @@ const HomePage = () => {
             <h1>100% Organic</h1>
             <button onClick={()=>{navigate('/shop')}}>SHOP</button>
           </div>
+        </div> */}
+        {/* ============Shop Card End=========== */}
+
+        {/* =================video with text============ */}
+        <div id='videoText' style={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row' }}>
+          <div id='vtext' style={{ display: 'flex', flexWrap: 'wrap' }}>
+            <div id='text' style={{ width: '40%' }}>
+              <h2>Moringa Herbal: An Overview</h2>
+              <h3>Moringa oleifera, also known as the "miracle tree" or "drumstick tree," is native to India and widely grown in tropical regions. It's renowned for its nutritional and medicinal properties, with all parts of the tree being beneficial.</h3>
+            </div>
+            <video controls autoPlay loop muted='false'>
+              <source src={V2} />
+            </video>
+          </div>
+          <div id='vtext' style={{ display: 'flex', flexWrap: 'wrap' }}>
+            <video controls autoPlay loop muted='false'>
+              <source src={V3} />
+            </video>
+            <div id='text' style={{ width: '40%' }}>
+              <h2>Moringa Herbal: An Overview</h2>
+              <h3>Moringa oleifera, also known as the "miracle tree" or "drumstick tree," is native to India and widely grown in tropical regions. It's renowned for its nutritional and medicinal properties, with all parts of the tree being beneficial.</h3>
+            </div>
+          </div>
         </div>
-                {/* ==============Categories Product END============= */}
-        <div className='ct' style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center',marginTop:'5%'}}>
+
+
+        {/* ==============Categories Product============= */}
+        {/* <div className='ct' style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center',marginTop:'5%'}}>
           <div><h1 style={{fontWeight: 'bolder',borderBottom:'3px solid #7fad39',marginBottom:'15%'}}>Categories</h1></div>
 
           <div className="container">
@@ -228,84 +291,86 @@ const HomePage = () => {
               </div>
             </div>
           </div>
-        </div>
-  {/* ==============Categories Product END============= */}
+        </div> */}
+        {/* ==============Categories Product END============= */}
 
         {/* ==============Feature Product ============= */}
-        <div className='ct' style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center' ,marginTop:'5%'}}>
-          <div><h1 style={{ fontWeight: 'bolder',borderBottom:'3px solid #7fad39',marginBottom:'15%'}}>Feature Products</h1></div>
+        <div className="d-flex flex-wrap justify-content-center gap-3 mt-3">
+          {products?.map((p) => (
+            <div
+              className="card text-center overflow-hidden border-0 shadow m-5"
+              style={{ width: '40rem' }}
+              key={p._id}
+            >
+              <button
+                onClick={() => handleAddToFavorites(p)}
+                style={{
+                  border: 'none',
+                  padding: 0,
+                  background: 'none',
+                  position: 'absolute',
+                  top: '10px',
+                  right: '10px',
+                  zIndex: 1,
+                }}
+              >
+                <IoMdHeart style={{ color: 'rgb(127, 173, 57)' }} size={30} />
+              </button>
 
-          <div className="container">
-            <div className="row scrollBox">
-              <div id="carouselExampleControls2" className="carousel slide custom-carousel" data-bs-ride="carousel">
-                <div className="carousel-inner">
-                  {chunkArray([...products], isMobile ? 1 : 6).map((productChunk, index) => (
-                    <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={index}>
-                      <div className="row g-2">
-                        {productChunk.map((p) => (
-                          <div className={`col ${isMobile ? 'col-12' : 'col-2'}`} key={p._id}>
-                            <div className="card h-100 productcard">
-                              <img
-                                src={`/api/v1/product/product-photo/${p._id}`}
-                                className="card-img-top custom-img"
-                                alt={p.name}
-                              />
-                              <div className="card-body d-flex flex-column">
-                                <h5 className="card-title">{p.name.substring(0, 30)}</h5>
-                                <hr></hr>
-                                <h5 className="card-title" style={{ color: 'grey', fontSize: '13px' }}>{p.description.substring(0, 30)}</h5>
-                                <h6 style={{ color: '#7fad39', fontSize: '13px', fontWeight: 'bolder' }}>Rs.{p.price}</h6>
-                                <div className="mt-auto">
-                                  <div className='grp_btn' style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                    <button
-                                      className="m-3"
-                                      onClick={() => {
-                                        setCart([...cart, p]);
-                                        localStorage.setItem('cart', JSON.stringify([...cart, p]));
-                                        toast.success('Item Added to Cart');
-                                      }}
-                                      style={{ border: 'none', padding: 0, background: 'none' }}
-                                    >
-                                      <IoMdCart size={25} />
-                                    </button>
-                                    <button
-                                      className="mb-2"
-                                      onClick={() => navigate(`/product/${p.slug}`)}
-                                      style={{ border: 'none', padding: 0, background: 'none' }}
-                                    >
-                                      <FaInfoCircle size={25} />
-                                    </button>
-                                    <button
-                                      className="mb-2"
-                                      onClick={() => handleAddToFavorites(p)}
-                                      style={{ border: 'none', padding: 0, background: 'none' }}
-                                    >
-                                      <FaHeart size={25} />
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="prev">
-                  <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span style={{ backgroundColor: '#7fad39', position: 'absolute', left: 0 }}><GrPrevious /></span>
+              <img
+                src={`/api/v1/product/product-photo/${p._id}`}
+                className="card-img-top"
+                alt={p.name}
+                style={{ height: '19rem', objectFit: 'contain' }}
+              />
+
+              <div className="card-body bg-dark text-white">
+                <h5 className="card-title fw-bold">{p.name.substring(0, 30)}</h5>
+                <p className="card-text">{p.description.substring(0, 30)}...</p>
+                <button
+                  className="btn btn-light px-3 rounded-pill"
+                  onClick={() => navigate(`/product/${p.slug}`)}
+                >
+                  More Details
                 </button>
-                <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="next">
-                  <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span style={{ backgroundColor: '#7fad39', position: 'absolute', right: 0 }}><GrNext /></span>
+                <p className="mt-3">
+                  Rs.<strong><span style={{ color: 'lime' }}>{p.price}</span></strong>
+                </p>
+                <button
+                  className="btn btn-light px-3 rounded-pill"
+                  style={{
+                    padding: '2%',
+                    border: '1px solid #32f065',
+                    color: '#32f065',
+                    backgroundColor: 'transparent',
+                    marginTop: '1rem',
+                  }}
+                  onClick={() => {
+                    setCart([...cart, p]);
+                    localStorage.setItem('cart', JSON.stringify([...cart, p]));
+                    toast.success('Item Added to Cart');
+                  }}
+                >
+                  ADD TO CART
                 </button>
               </div>
             </div>
-          </div>
+          ))}
         </div>
-
         <div className="m-2 p-3">
+          {products && products.length < total && (
+            <button
+              className="btn btn-outline-info"
+              onClick={(e) => {
+                e.preventDefault();
+                setPage(page + 1);
+              }}
+            >
+              {loading ? ("Loading ...") : ("Loadmore")}
+            </button>
+          )}
+        </div>
+        {/* <div className="m-2 p-3">
           {products && products.length < total && (
             <button
               className="btn btn-warning"
@@ -317,16 +382,16 @@ const HomePage = () => {
               {loading ? 'Loading ...' : 'Loadmore'}
             </button>
           )}
-        </div>
+        </div> */}
         {/* ==============Feature Product END============= */}
 
         {/* =========Banner========== */}
- 
-        <div className="banner-container m-6" style={{display:'flex',flexDirection:'column', alignItems: 'center'}}>
-        <div><h1 style={{fontWeight: 'bolder',borderBottom:'3px solid #7fad39', textAlign:'center'}}>Special Offer</h1></div>
-          <div className="rows" style={{display:'flex',justifyContent:'space-evenly'}}>
+
+        <div className="banner-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <div><h1 style={{ fontWeight: 'bolder', borderBottom: '3px solid #7fad39', textAlign: 'center' }}>Special Offer</h1></div>
+          <div className="rows" style={{ display: 'flex', justifyContent: 'space-evenly' }}>
             {banners?.slice(0, 2).map((p, index) => (
-              <div key={index} className='ban w-100 m-4' >
+              <div key={index} className='ban w-100' >
                 <img
                   src={`/api/v1/banner/banner-photo/${p._id}`}
                   className="img-fluid"
@@ -342,8 +407,9 @@ const HomePage = () => {
             ))}
           </div>
         </div>
-           {/* =========Banner End========== */}
-        
+        {/* =========Banner End========== */}
+        {/* <Link target="_blank" to="https://api.whatsapp.com/send?phone=6289302614&text='Hi'" class="whatsapp-button"><i class="fab fa-whatsapp"></i></Link> */}
+
       </div>
     </Lay>
   );

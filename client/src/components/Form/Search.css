@@ -98,9 +98,17 @@
     font-size: 14px;
     color: #6f6f6f;
   }
+  #inp{
+    padding: 2%;
+    padding-inline: 20%;
+  }
   
   /* Media Queries for Mobile Responsiveness */
   @media (max-width: 600px) {
+    #inp{
+      padding: 13px;
+      padding-inline: 8%;
+    }
 
     .hero__search__form {
       width: 100%; /* Full width on mobile */
