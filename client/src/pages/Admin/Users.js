@@ -11,7 +11,7 @@ const Users = () => {
                 <AdminMenu/>
             </div>
         <div className='col-md-9'>
-            <h1>Users</h1>
+            <h1>Create Blog</h1>
         </div>
         </div>
         </div>

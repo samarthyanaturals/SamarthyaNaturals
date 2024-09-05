@@ -16,7 +16,7 @@ body {
   /* justify-content: space-between; */
   align-items: center;
   height: 100%;
-  background-color: rgb(234, 232, 232,0.2);
+  background-color: rgba(255, 255, 255, 1);
   box-shadow: none;
   z-index: 100;
 
@@ -24,18 +24,33 @@ body {
 
 .navbar {
   padding: 0%;
-  height: 60px;
-  background-color: transparent;
+  height: 14vh;
+  background-color: white;
   box-shadow: none;
   position: relative;
   border: 1 px solid white;
   position: sticky;
   top: 0%;
   z-index: 1000;
+  line-height: 80px;
+}
+
+.left_container ul {
+  /* line-height: 100px; */
+  gap: 20%;
+}
+
+.left_container ul li a {
+  font-size: 18px;
+  font-weight: 700;
+  color: #137c44;
+  background-color: transparent;
+  text-decoration: none;
+  /* text-transform: uppercase; */
 }
 
 .logo {
-  font-size: 4vh;
+  /* font-size: 4vh; */
   font-weight: bold;
   padding-left: 3%;
   padding-bottom: 1.5%;
@@ -46,17 +61,16 @@ body {
 }
 
 
-.nav-elements {
-}
+.nav-elements {}
 
 .nav-elements ul {
   display: flex;
   justify-content: space-between;
   list-style-type: none;
-  line-height: 60px;
+  /* line-height: 70px; */
   padding: 0%;
   margin: 0%;
-  
+
 }
 
 .nav-elements ul li:not(:last-child) {
@@ -79,6 +93,22 @@ body {
   position: relative;
 }
 
+#home {
+  display: none;
+}
+
+#shop {
+  display: none;
+}
+
+#blog {
+  display: none;
+}
+
+#about {
+  display: none;
+}
+
 /* .nav-elements ul a.active::after {
   content: "";
   position: absolute;
@@ -97,16 +127,23 @@ body {
 }
 
 @media (max-width: 600px) {
-  .logo{
+  .logo {
     font-size: 3vh;
   }
+
   .menu-icon {
     display: block;
     cursor: pointer;
   }
-  .container{
-justify-content: space-between;
-    
+
+  .container {
+    justify-content: space-between;
+    background-color: white;
+
+  }
+
+  .navbar {
+    height: 60px;
   }
 
   .nav-elements {
@@ -115,7 +152,7 @@ justify-content: space-between;
     top: 60px;
     background-color: #ebe9e9;
     z-index: 1600;
-    
+
     /* border: 0.5px solid rgb(141, 139, 139); */
     width: 0px;
     height: calc(100vh - 60px);
@@ -125,18 +162,36 @@ justify-content: space-between;
 
   .nav-elements.active {
     width: 80vw;
-    box-shadow: -28px 6px 51px 9px rgba(57,56,56,0.75);
+    box-shadow: -28px 6px 51px 9px rgba(57, 56, 56, 0.75);
     border-radius: 5px;
   }
 
   .nav-elements ul {
     display: flex;
     flex-direction: column;
-    
+
   }
 
   .nav-elements ul li {
     margin-right: unset;
     margin-top: 22px;
+  }
+  .left_container{
+    display: none;
+  }
+  #home {
+    display: block;
+  }
+  
+  #shop {
+    display: block;
+  }
+  
+  #blog {
+    display: block;
+  }
+  
+  #about {
+    display: block;
   }
 }

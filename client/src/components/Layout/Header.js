@@ -59,25 +59,43 @@ const Header = () => {
     <>
       <nav className="navbar">
         <div className="container">
-          <div className="logo" style={{width:'20%'}}>
-            <img src={logo} width={'100%'}></img>
+          <div className='left_container'>
+          <ul style={{display:'flex',alignItems:'center'}}>
+            <li>
+            <NavLink to="/">Home</NavLink>
+            </li>
+            <li>
+            <NavLink to="/shop">Shop</NavLink>
+            </li>
+            <li>
+            <NavLink to="/about">About</NavLink>
+            </li>
+            <li>
+            <NavLink to="/blog">Blog</NavLink>
+            </li>
+          </ul>
           </div>
+          
+          <div className="logo" style={{width:'29%'}}>
+            <NavLink to="/"><img src={logo} width={'100%'}></img></NavLink>
+          </div>
+
           <div className="menu-icon" onClick={handleShowNavbar}>
             <Hamburger />
           </div>
-          <div className={`nav-elements  ${showNavbar && "active"}`}>
+          <div className={`nav-elements  ${showNavbar && "active"}`} style={{top:62}}>
             <ul>
-              <li>
+              <li id='home'>
                 <NavLink to="/">Home</NavLink>
               </li>
-              <li>
+              <li id='shop'>
                 <NavLink to="/shop">Shop</NavLink>
               </li>
               <div className="dropdown" id='loginout' style={{ marginRight: "4%", marginTop: "1%", padding: 0 }}>
                 {!auth.user ? (
                   <>
                     <a
-                      className="btn btn-info dropdown-toggle nav-link"
+                      className="btn  dropdown-toggle nav-link"
                       href="#"
                       role="button"
                       id="authDropdown"
@@ -103,7 +121,7 @@ const Header = () => {
                       data-bs-toggle="dropdown"
                       aria-haspopup="true"
                       aria-expanded="false"
-                      style={{ backgroundColor: '#7fad39' }}
+                      style={{ backgroundColor:'transparent',border:'none'}}
                     >
                       {auth?.user?.name}
                     </a>
@@ -114,17 +132,17 @@ const Header = () => {
                   </>
                 )}
               </div>
-              <li>
+              <li id='blog'>
                 <NavLink to="/blog">Blog</NavLink>
               </li>
-              <li>
-                <NavLink to="/contact">Contact</NavLink>
+              <li id='about'>
+                <NavLink to="/about">About</NavLink>
               </li>
 
-              <li style={{ marginRight: 20 }}>
-                <button type="button" className="position-relative btn  p-0" style={{ lineHeight: '20px' }}>
+              <li style={{ marginRight: 20,lineHeight:'30px'}}>
+                <button type="button" className="position-relative btn  p-0" >
                   <NavLink to="/cart" className="nav-link">
-                    <FaCartShopping size={22} color='#00db1a'/>
+                    <FaCartShopping size={18} color='#00db1a'/>
                     <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
                       {cart?.length}
                       <span className="visually-hidden">unread messages</span>
@@ -132,10 +150,10 @@ const Header = () => {
                   </NavLink>
                 </button>
               </li>
-              <li>
-                <button type="button" className="position-relative btn p-0" style={{ lineHeight: '35px' }}>
+              <li style={{ marginRight: 20,lineHeight:'30px' }}>
+                <button type="button" className="position-relative btn p-0" >
                   <NavLink to="/favourite" className="nav-link">
-                    <FaRegHeart fontSize={22} color='#00db1a'/>
+                    <FaRegHeart fontSize={18} color='#00db1a'/>
                     <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
                       {favorites?.length}
                       <span className="visually-hidden">unread messages</span>

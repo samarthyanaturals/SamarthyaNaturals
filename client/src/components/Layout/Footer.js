@@ -7,17 +7,19 @@ import logo from './image/logo.png';
 import payment from './image/payment-item.png'
 import '../../css/footer.css'
 import { FaHeart } from "react-icons/fa";
+import Lay from './Lay';
 
 const Footer = () => {
   return (
     <>
+
 <footer className="footer spad" style={{backgroundColor:'#f3f6fa'}}>
   <div className="container" style={{backgroundColor:'#f3f6fa'}}>
     <div className="row">
       <div className="col-lg-3 col-md-6 col-sm-6">
         <div className="footer__about">
           <div className="footer__about__logo">
-            <a href="./index.html"><img src={logo}/></a>
+            <a href="/"><img id='footer_logo_final' src={logo}/></a>
           </div>
           <ul>
             <li>Address: Chak 6.s.t.b. , Teh. Sri vijaynagar,distt. Anupgarh, state Rajasthan</li>
@@ -30,36 +32,33 @@ const Footer = () => {
         <div className="footer__widget">
           <h6>Useful Links</h6>
           <ul>
-            <li><a href="#">About Us</a></li>
+            <li><a href="/about">About Us</a></li>
             <li><a href="#">About Our Shop</a></li>
-            <li><a href="#">Secure Shopping</a></li>
+            <li><a href="/shipmentpolicy">Shipment Policy</a></li>
             <li><a href="/terms">Terms and Conditions</a></li>
-            <li><a href="/policy">Privacy Policy</a></li>
-            <li><a href="/refund">Refund Policy</a></li>
+
           </ul>
           <ul>
-            <li><a href="#">Who We Are</a></li>
-            <li><a href="#">Our Services</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Innovation</a></li>
-            <li><a href="#">Testimonials</a></li>
+            <li><a href="/whoweare">Who We Are</a></li>
+            <li><a href="/policy">Privacy Policy</a></li>
+            <li><a href="/refund">Refund Policy</a></li>
+            <li><a href="/contact">Contact</a></li>
           </ul>
         </div>
       </div>
       <div className="col-lg-4 col-md-12">
         <div className="footer__widget">
-          <h6>Join Our Newsletter Now</h6>
-          <p>Get E-mail updates about our latest shop and special offers.</p>
+      <h6>Our Social Media Handles</h6>
+              {/* <p>Get E-mail updates about our latest shop and special offers.</p>
           <form action="#">
             <input type="text" placeholder="Enter your mail" />
             <button type="submit" className="site-btn">Subscribe</button>
-          </form>
+          </form> */}
           <div className="footer__widget__social">
             <a href="#"><FaFacebook/></a>
-            <a href="#"><FaInstagram/></a>
-            <a href="#"><FaXTwitter/></a>
-            <a href="#"><FaPinterest/></a>
+            <a href="https://www.instagram.com/samarthyanaturals/" target='_blank'><FaInstagram/></a>
+            {/* <a href="#"><FaXTwitter/></a>
+            <a href="#"><FaPinterest/></a> */}
           </div>
         </div>
       </div>

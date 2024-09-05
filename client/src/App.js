@@ -23,6 +23,7 @@ import Products from './pages/Admin/Products';
 import UpdateProduct from './pages/Admin/UpdateProduct';
 import Search from './pages/Search';
 import ProductDetails from './pages/ProductDetails';
+import BlogDetails from './pages/BlogDetails';
 import Categories from './pages/Categories';
 import CategoryProduct from './pages/CategoryProduct';
 import CartPage from './pages/CartPage';
@@ -34,6 +35,11 @@ import Shop from './pages/Shop';
 import Blog from './pages/Blog';
 import Terms from './pages/Terms';
 import Refund from './pages/Refund';
+import ShipmentPolicy from './pages/ShipmentPolicy';
+import WhoWeAre from './pages/WhoWeAre';
+import CreateBlog from './pages/Admin/CreateBlog';
+import Blogs from './pages/Admin/Blogs';
+import UpdateBlog from './pages/Admin/UpdateBlog';
 
 function App() {
   return (
@@ -41,6 +47,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/product/:slug" element={<ProductDetails />} />
+        <Route path="/blog/:slug" element={<BlogDetails />} />
         <Route path="/banner/bannerpage" element={<BannerPage />} />
         <Route path="/categories" element={<Categories/>} />
         <Route path="/category/:slug" element={<CategoryProduct/>} />
@@ -60,7 +67,10 @@ function App() {
           <Route path='admin/create-banner' element={<CreateBanner />} />
           <Route path='admin/product/:slug' element={<UpdateProduct />} />
           <Route path='admin/products' element={<Products/>} />
+          <Route path='admin/blogs' element={<Blogs/>} />
+          <Route path='admin/blog/:slug' element={<UpdateBlog />} />
           <Route path='admin/users' element={<Users />} />
+          <Route path='admin/create-blog' element={<CreateBlog />} />
           <Route path='admin/orders' element={<AdminOrders />} />
         </Route>
         <Route path="/login" element={<Login />} />
@@ -70,8 +80,11 @@ function App() {
         <Route path="/shop" element={<Shop />} />
         <Route path="/blog" element={<Blog/>} />
         <Route path="/policy" element={<Policy />} />
+        <Route path="/shipmentpolicy" element={<ShipmentPolicy />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/refund" element={<Refund />} />
+        <Route path="/whoweare" element={<WhoWeAre />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<Pagenotfound />} />
       </Routes>
     </>

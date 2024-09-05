@@ -13,8 +13,9 @@ import BannerPage from './BannerPage';
 
 import CategoryDropDown from '../components/Layout/CategoryDropdown/CategoryDropDown';
 import './../css/Homepage.css';
-import banner from './image/banner.jpg';
+// import banner from './image/banner.jpg';
 import demo1 from './image/demo1.png';
+import home_banner from './image/banner_home.png';
 import { GrPrevious } from "react-icons/gr";
 import { GrNext } from "react-icons/gr";
 import { FaInfoCircle } from "react-icons/fa";
@@ -24,7 +25,8 @@ import { IoMdHeart } from "react-icons/io";
 import MainSlider from '../components/MainSlider';
 
 import V1 from './Video/WelCome_Samarthya.mp4'
-import V2 from './Video/v2.mp4'
+import moringa from './image/moringa_new.png'
+import vermi from './image/vermi.png'
 import V3 from './Video/V3.mp4'
 
 const HomePage = () => {
@@ -192,109 +194,17 @@ const HomePage = () => {
         </div> */}
 
         {/* ==========Welcome========= */}
-        <video autoPlay muted loop style={{ marginTop: '-10%', width: '100%', zIndex: '-1' }}>
+        <video autoPlay muted loop id='vid' style={{ width: '100%', zIndex: '-1' }}>
           <source src={V1} />
         </video>
         {/* ===========Welcome End======== */}
         <div style={{ width: '100%' }} id='ProductShow'>
-          <img src={demo1} />
+          <img src={home_banner} />
         </div>
 
-        {/* ============Main Slider======= */}
-        <div style={{ width: '100%', display: 'block' }}>
-          <MainSlider style={{ width: '100vw', padding: 0, margin: 0 }} />
-        </div>
-        {/* =============Main Slider End========= */}
-
-        {/* =========Shop Card========= */}
-
-        {/* <div className="shop mt-2">
-          <div className="left"></div>
-          <div className="right">
-            <h5>FRUIT FRESH</h5>
-            <h1>Vegetable</h1>
-            <h1>100% Organic</h1>
-            <button onClick={()=>{navigate('/shop')}}>SHOP</button>
-          </div>
-        </div> */}
-        {/* ============Shop Card End=========== */}
-
-        {/* =================video with text============ */}
-        <div id='videoText' style={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row' }}>
-          <div id='vtext' style={{ display: 'flex', flexWrap: 'wrap' }}>
-            <div id='text' style={{ width: '40%' }}>
-              <h2>Moringa Herbal: An Overview</h2>
-              <h3>Moringa oleifera, also known as the "miracle tree" or "drumstick tree," is native to India and widely grown in tropical regions. It's renowned for its nutritional and medicinal properties, with all parts of the tree being beneficial.</h3>
-            </div>
-            <video controls autoPlay loop muted='false'>
-              <source src={V2} />
-            </video>
-          </div>
-          <div id='vtext' style={{ display: 'flex', flexWrap: 'wrap' }}>
-            <video controls autoPlay loop muted='false'>
-              <source src={V3} />
-            </video>
-            <div id='text' style={{ width: '40%' }}>
-              <h2>Moringa Herbal: An Overview</h2>
-              <h3>Moringa oleifera, also known as the "miracle tree" or "drumstick tree," is native to India and widely grown in tropical regions. It's renowned for its nutritional and medicinal properties, with all parts of the tree being beneficial.</h3>
-            </div>
-          </div>
-        </div>
-
-
-        {/* ==============Categories Product============= */}
-        {/* <div className='ct' style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center',marginTop:'5%'}}>
-          <div><h1 style={{fontWeight: 'bolder',borderBottom:'3px solid #7fad39',marginBottom:'15%'}}>Categories</h1></div>
-
-          <div className="container">
-            <div className="row scrollBox">
-              <div id="carouselExampleControls" className="carousel slide custom-carousel" data-bs-ride="carousel">
-                <div className="carousel-inner">
-                  {chunkArray([...products], isMobile ? 1 : 6).map((productChunk, index) => (
-                    <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={index}>
-                      <div className="row g-2">
-                        {productChunk.map((p) => (
-                          <div className={`col ${isMobile ? 'col-12' : 'col-2'}`} key={p._id}>
-                            <div className="card h-100">
-                              <img
-                                src={`/api/v1/product/product-photo/${p._id}`}
-                                className="card-img-top custom-img"
-                                alt={p.name}
-                              />
-                              <div className="card-body d-flex flex-column">
-                                <h5 className="card-title">{p.name.substring(0, 30)}</h5>
-                                <div className="mt-auto">
-                                  <button
-                                    className="btn btn-primary w-100 mb-2"
-                                    onClick={() => navigate(`/product/${p.slug}`)}
-                                    style={{ backgroundColor: 'white', color: 'green' }}
-                                  >
-                                    {getCategoryName(p.category)}
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                  <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span style={{ backgroundColor: '#7fad39', position: 'absolute', left: 0 }}><GrPrevious /></span>
-                </button>
-                <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                  <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span style={{ backgroundColor: '#7fad39', position: 'absolute', right: 0 }}><GrNext /></span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div> */}
-        {/* ==============Categories Product END============= */}
-
+        {/* ===========Dummy feature  products========== */}
         {/* ==============Feature Product ============= */}
+        <h1 className='text-center mt-3' style={{ color: '#137c44' }} >Feature Product</h1>
         <div className="d-flex flex-wrap justify-content-center gap-3 mt-3">
           {products?.map((p) => (
             <div
@@ -370,6 +280,178 @@ const HomePage = () => {
             </button>
           )}
         </div>
+
+
+        {/* ===============Dummy Feature product end============== */}
+
+        {/* ============Main Slider======= */}
+        <div style={{ width: '100%', display: 'block' }}>
+          <MainSlider style={{ width: '100vw', padding: 0, margin: 0 }} />
+        </div>
+        {/* =============Main Slider End========= */}
+
+
+
+        {/* =========Shop Card========= */}
+
+        {/* <div className="shop mt-2">
+          <div className="left"></div>
+          <div className="right">
+            <h5>FRUIT FRESH</h5>
+            <h1>Vegetable</h1>
+            <h1>100% Organic</h1>
+            <button onClick={()=>{navigate('/shop')}}>SHOP</button>
+          </div>
+        </div> */}
+        {/* ============Shop Card End=========== */}
+
+        {/* =================video with text============ */}
+        <div id='videoText' style={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row' }}>
+          <div id='vtext' style={{ display: 'flex', flexWrap: 'wrap' }}>
+            <div id='text' style={{ width: '40%' }}>
+              <h2>Moringa: The Miracle Superfood</h2>
+              <h3>Unlock the power of Moringa, nature's miracle superfood packed with essential nutrients and antioxidants. Rich in vitamins A, C, and E, along with calcium, protein, and iron, Moringa supports overall health and vitality. It boosts immunity, promotes healthy skin, aids digestion, and enhances energy levels. Whether you add it to smoothies, teas, or meals, *Moringa* is a natural way to nourish your body and elevate your wellness. Discover the incredible benefits of this ancient plant and make *Moringa* a part of your daily routine for a healthier, more vibrant life!</h3>
+            </div>
+            <img src={moringa}></img>
+          </div>
+          <div id='vtext' style={{ display: 'flex', flexWrap: 'wrap' }}>
+            <img src={vermi}></img>
+            <div id='text' style={{ width: '40%' }}>
+              <h2>Samarthya Naturals Vermi Compost</h2>
+              <h3>Give your garden the organic boost it deserves with *Samarthya Naturals Vermi Compost. Our nutrient-rich compost is made from the finest organic matter, processed by earthworms to create a powerful soil conditioner that promotes healthy plant growth. It's the perfect choice for those who care about sustainability and want to see their plants thrive naturally. Whether you're growing vegetables, flowers, or herbs, our Vermi Compost enhances soil fertility, improves moisture retention, and helps your garden flourish. Choose **Samarthya Naturals Vermi Compost* for a greener, more vibrant garden!</h3>
+            </div>
+          </div>
+        </div>
+
+
+        {/* ==============Categories Product============= */}
+        {/* <div className='ct' style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center',marginTop:'5%'}}>
+          <div><h1 style={{fontWeight: 'bolder',borderBottom:'3px solid #7fad39',marginBottom:'15%'}}>Categories</h1></div>
+
+          <div className="container">
+            <div className="row scrollBox">
+              <div id="carouselExampleControls" className="carousel slide custom-carousel" data-bs-ride="carousel">
+                <div className="carousel-inner">
+                  {chunkArray([...products], isMobile ? 1 : 6).map((productChunk, index) => (
+                    <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={index}>
+                      <div className="row g-2">
+                        {productChunk.map((p) => (
+                          <div className={`col ${isMobile ? 'col-12' : 'col-2'}`} key={p._id}>
+                            <div className="card h-100">
+                              <img
+                                src={`/api/v1/product/product-photo/${p._id}`}
+                                className="card-img-top custom-img"
+                                alt={p.name}
+                              />
+                              <div className="card-body d-flex flex-column">
+                                <h5 className="card-title">{p.name.substring(0, 30)}</h5>
+                                <div className="mt-auto">
+                                  <button
+                                    className="btn btn-primary w-100 mb-2"
+                                    onClick={() => navigate(`/product/${p.slug}`)}
+                                    style={{ backgroundColor: 'white', color: 'green' }}
+                                  >
+                                    {getCategoryName(p.category)}
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span style={{ backgroundColor: '#7fad39', position: 'absolute', left: 0 }}><GrPrevious /></span>
+                </button>
+                <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                  <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span style={{ backgroundColor: '#7fad39', position: 'absolute', right: 0 }}><GrNext /></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div> */}
+        {/* ==============Categories Product END============= */}
+
+        {/* ==============Feature Product ============= */}
+        {/* <div className="d-flex flex-wrap justify-content-center gap-3 mt-3">
+          {products?.map((p) => (
+            <div
+              className="card text-center overflow-hidden border-0 shadow m-5"
+              style={{ width: '40rem' }}
+              key={p._id}
+            >
+              <button
+                onClick={() => handleAddToFavorites(p)}
+                style={{
+                  border: 'none',
+                  padding: 0,
+                  background: 'none',
+                  position: 'absolute',
+                  top: '10px',
+                  right: '10px',
+                  zIndex: 1,
+                }}
+              >
+                <IoMdHeart style={{ color: 'rgb(127, 173, 57)' }} size={30} />
+              </button>
+
+              <img
+                src={`/api/v1/product/product-photo/${p._id}`}
+                className="card-img-top"
+                alt={p.name}
+                style={{ height: '19rem', objectFit: 'contain' }}
+              />
+
+              <div className="card-body bg-dark text-white">
+                <h5 className="card-title fw-bold">{p.name.substring(0, 30)}</h5>
+                <p className="card-text">{p.description.substring(0, 30)}...</p>
+                <button
+                  className="btn btn-light px-3 rounded-pill"
+                  onClick={() => navigate(`/product/${p.slug}`)}
+                >
+                  More Details
+                </button>
+                <p className="mt-3">
+                  Rs.<strong><span style={{ color: 'lime' }}>{p.price}</span></strong>
+                </p>
+                <button
+                  className="btn btn-light px-3 rounded-pill"
+                  style={{
+                    padding: '2%',
+                    border: '1px solid #32f065',
+                    color: '#32f065',
+                    backgroundColor: 'transparent',
+                    marginTop: '1rem',
+                  }}
+                  onClick={() => {
+                    setCart([...cart, p]);
+                    localStorage.setItem('cart', JSON.stringify([...cart, p]));
+                    toast.success('Item Added to Cart');
+                  }}
+                >
+                  ADD TO CART
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="m-2 p-3">
+          {products && products.length < total && (
+            <button
+              className="btn btn-outline-info"
+              onClick={(e) => {
+                e.preventDefault();
+                setPage(page + 1);
+              }}
+            >
+              {loading ? ("Loading ...") : ("Loadmore")}
+            </button>
+          )}
+        </div> */}
         {/* <div className="m-2 p-3">
           {products && products.length < total && (
             <button
@@ -386,7 +468,7 @@ const HomePage = () => {
         {/* ==============Feature Product END============= */}
 
         {/* =========Banner========== */}
-
+        {/* 
         <div className="banner-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <div><h1 style={{ fontWeight: 'bolder', borderBottom: '3px solid #7fad39', textAlign: 'center' }}>Special Offer</h1></div>
           <div className="rows" style={{ display: 'flex', justifyContent: 'space-evenly' }}>
@@ -406,7 +488,7 @@ const HomePage = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
         {/* =========Banner End========== */}
         {/* <Link target="_blank" to="https://api.whatsapp.com/send?phone=6289302614&text='Hi'" class="whatsapp-button"><i class="fab fa-whatsapp"></i></Link> */}
 

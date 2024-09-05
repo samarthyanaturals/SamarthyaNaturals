@@ -96,17 +96,69 @@ const CartPage = () => {
                 : "Please Login to checkout"}` : "Your Cart is Empty"
               }
             </h4>
+          <div className='details' style={{display:'flex',flexDirection:'column',flexWrap:'wrap'}}>
+            <h3 style={{color:'#137c44'}}>Your Shipment Details</h3>
+            <div>
+          <h5>Name : {`${auth?.user?.name}`}</h5> 
+            </div>
+            <div>
+          <h5>Email : {`${auth?.user?.email}`}</h5> 
+            </div>
+            <div>
+          <h5>Phone : {`${auth?.user?.phone}`}</h5> 
+            </div>
+            <div>
+          <h5>Address : {`${auth?.user?.address}`}</h5> 
+            </div>
+             {
+              auth?.user?.address ? (<>
+                <div className='mb-3'>
+                  <h4>Current Address</h4>
+                  <h5>{auth?.user?.address}</h5>
+                  <button className='btn btn-outline-warning'
+                    onClick={() => navigate('/dashboard/user/profile')}>
+                    Update Details
+                  </button>
+                </div>
+              </>) :
+                (<div className='mb-3'>
+                  {
+                    auth?.token ? (
+                      <button
+                        className="btn btn-outline-warning"
+                        onClick={() => navigate("/dashboard/user/profile")}
+                      >
+                        Update Address
+                      </button>
+                    ) : (
+                      <button
+                        className="btn btn-outline-warning"
+                        onClick={() =>
+                          navigate("/login", {
+                            state: "/cart",
+                          })
+                        }
+                      >
+                        Plase Login to checkout
+                      </button>
+                    )
+                  }
+                </div>)
+            }
+
+          </div>
+
           </div>
         </div>
-        <div className='row' style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <div className='row' style={{ display: 'flex', gap:5 }}>
           <div className='col-md-6'>
             {
               cart?.map((p) => (
                 <div className='row mb-2 card flex-row p-3'>
-                  <div className='col-md-4'>
+                  <div className='col-md-6'>
                     <img src={`/api/v1/product/product-photo/${p._id}`}
                       className='card-img-top' alt={p.name}
-                      style={{ width: "90%", height: "90%", border: "0.5px solid grey" }}
+                      style={{ width: "100%", height: "90%", border: "0.5px solid grey" }}
                     />
                   </div>
                   <div className='col-md-8'>

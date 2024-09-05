@@ -1,5 +1,9 @@
 import React from 'react'
 import Carousel from 'react-bootstrap/Carousel';
+import one from './../components/Layout/image/5.png'
+import two from './../components/Layout/image/6.png'
+import three from './../components/Layout/image/3.png'
+import four from './../components/Layout/image/7.png'
 
 const MainSlider = () => {
   return (
@@ -8,43 +12,64 @@ const MainSlider = () => {
       <Carousel.Item interval={1000}>
       <div       
       style={{
-        backgroundImage: "url(https://i.pinimg.com/originals/2a/3b/cb/2a3bcbcbe4e14c1cf24ef307c10c1fb9.gif)",
+        backgroundColor:'#e2f9ce',
+        backgroundImage: `url(${one})`,
         height: '80vh', // You can adjust the height and other styles as needed
-        backgroundSize: 'cover', // This ensures the image covers the whole div
-        backgroundPosition: 'center' // This centers the image in the div
+        backgroundSize: 'contain', // This ensures the image contains the whole div
+        backgroundPosition: 'center',
+        backgroundRepeat:'no-repeat' // This centers the image in the div
       }}></div>
         <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          {/* <h3>First slide label</h3>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> */}
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item interval={500}>
       <div       
       style={{
-        backgroundImage: "url('https://plus.unsplash.com/premium_photo-1678371210527-7af8f4ae682c?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y29tcG9zdHxlbnwwfHwwfHx8MA%3D%3D')",
+        backgroundColor:'#e2f9ce',
+        backgroundImage: `url(${two})`,
         height: '80vh', // You can adjust the height and other styles as needed
-        backgroundSize: 'cover', // This ensures the image covers the whole div
-        backgroundPosition: 'center' // This centers the image in the div
+        backgroundSize: 'contain', // This ensures the image contains the whole div
+        backgroundPosition: 'center',
+        backgroundRepeat:'no-repeat' // This centers the image in the div
       }}></div>
 
         <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          {/* <h3>Second slide label</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> */}
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
       <div       
       style={{
-        backgroundImage: "url('https://images.unsplash.com/photo-1545333212-ffebc7933c12?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGNvbXBvc3R8ZW58MHx8MHx8fDA%3D')",
+        backgroundColor:'#e2f9ce',
+        backgroundImage: `url(${three})`,
         height: '80vh', // You can adjust the height and other styles as needed
-        backgroundSize: 'cover', // This ensures the image covers the whole div
-        backgroundPosition: 'center' // This centers the image in the div
+        backgroundSize: 'contain', // This ensures the image contains the whole div
+        backgroundPosition: 'center',
+        backgroundRepeat:'no-repeat' // This centers the image in the div
       }}></div>
         <Carousel.Caption>
-          <h3>Third slide label</h3>
+          {/* <h3>Third slide label</h3>
           <p>
             Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
+          </p> */}
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item interval={1000}>
+      <div       
+      style={{
+        backgroundColor:'#e2f9ce',
+        backgroundImage: `url(${four})`,
+        height: '80vh', // You can adjust the height and other styles as needed
+        backgroundSize: 'contain', // This ensures the image contains the whole div
+        backgroundPosition: 'center',
+        backgroundRepeat:'no-repeat' // This centers the image in the div
+      }}></div>
+        <Carousel.Caption>
+          {/* <h3>First slide label</h3>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> */}
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
