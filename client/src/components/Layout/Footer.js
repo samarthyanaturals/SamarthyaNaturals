@@ -1,8 +1,9 @@
 import React from 'react'
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
-import { FaPinterest } from "react-icons/fa";
+// import { FaXTwitter } from "react-icons/fa6";
+// import { FaPinterest } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
 import logo from './image/logo.png';
 import payment from './image/payment-item.png'
 import '../../css/footer.css'
@@ -24,7 +25,7 @@ const Footer = () => {
           <ul>
             <li>Address: Chak 6.s.t.b. , Teh. Sri vijaynagar,distt. Anupgarh, state Rajasthan</li>
             <li>Phone: +91 83026 57922</li>
-            <li>Email: samarthyanaturals@mail.com</li>
+            <li>Email: samarthyanaturals@gmail.com</li>
           </ul>
         </div>
       </div>
@@ -33,7 +34,6 @@ const Footer = () => {
           <h6>Useful Links</h6>
           <ul>
             <li><a href="/about">About Us</a></li>
-            <li><a href="#">About Our Shop</a></li>
             <li><a href="/shipmentpolicy">Shipment Policy</a></li>
             <li><a href="/terms">Terms and Conditions</a></li>
 
@@ -55,10 +55,10 @@ const Footer = () => {
             <button type="submit" className="site-btn">Subscribe</button>
           </form> */}
           <div className="footer__widget__social">
-            <a href="#"><FaFacebook/></a>
+            <a href="https://www.facebook.com/profile.php?id=61564470917492&mibextid=ZbWKwL" target='_blank'><FaFacebook/></a>
             <a href="https://www.instagram.com/samarthyanaturals/" target='_blank'><FaInstagram/></a>
-            {/* <a href="#"><FaXTwitter/></a>
-            <a href="#"><FaPinterest/></a> */}
+            <a href="https://www.youtube.com/@SamarthyaNaturals/featured?sub_confirmation=1" target='_blank'><FaYoutube /></a>
+            {/* <a href="#"><FaPinterest/></a> */}
           </div>
         </div>
       </div>

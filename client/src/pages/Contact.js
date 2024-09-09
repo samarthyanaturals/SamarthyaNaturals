@@ -23,7 +23,7 @@ const Contact = () => {
         <h1 style={headingStyle}>Contact Us</h1>
         <p style={textStyle}>Address: Chak 6.s.t.b., Teh. Sri vijaynagar, distt. Anupgarh, state Rajasthan</p>
         <p style={textStyle}>Phone: +91 83026 57922</p>
-        <p style={textStyle}>Email: samarthyanaturals@mail.com</p>
+        <p style={textStyle}>Email: samarthyanaturals@gmail.com</p>
       </div>
     </Lay>
   );

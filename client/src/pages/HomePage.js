@@ -308,7 +308,7 @@ const HomePage = () => {
         {/* =================video with text============ */}
         <div id='videoText' style={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row' }}>
           <div id='vtext' style={{ display: 'flex', flexWrap: 'wrap' }}>
-            <div id='text' style={{ width: '40%' }}>
+            <div id='text' >
               <h2>Moringa: The Miracle Superfood</h2>
               <h3>Unlock the power of Moringa, nature's miracle superfood packed with essential nutrients and antioxidants. Rich in vitamins A, C, and E, along with calcium, protein, and iron, Moringa supports overall health and vitality. It boosts immunity, promotes healthy skin, aids digestion, and enhances energy levels. Whether you add it to smoothies, teas, or meals, *Moringa* is a natural way to nourish your body and elevate your wellness. Discover the incredible benefits of this ancient plant and make *Moringa* a part of your daily routine for a healthier, more vibrant life!</h3>
             </div>
@@ -316,7 +316,7 @@ const HomePage = () => {
           </div>
           <div id='vtext' style={{ display: 'flex', flexWrap: 'wrap' }}>
             <img src={vermi}></img>
-            <div id='text' style={{ width: '40%' }}>
+            <div id='text' >
               <h2>Samarthya Naturals Vermi Compost</h2>
               <h3>Give your garden the organic boost it deserves with *Samarthya Naturals Vermi Compost. Our nutrient-rich compost is made from the finest organic matter, processed by earthworms to create a powerful soil conditioner that promotes healthy plant growth. It's the perfect choice for those who care about sustainability and want to see their plants thrive naturally. Whether you're growing vegetables, flowers, or herbs, our Vermi Compost enhances soil fertility, improves moisture retention, and helps your garden flourish. Choose **Samarthya Naturals Vermi Compost* for a greener, more vibrant garden!</h3>
             </div>

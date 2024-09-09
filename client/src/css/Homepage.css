@@ -67,6 +67,9 @@
     background-color: #095b05e9;
     color: #ffffff;
 }
+#vtext #text{
+    width: 40%;
+}
 
 .shop {
     height: 40%;
@@ -259,7 +262,18 @@
     #vtext #text {
         width: 100%;
         text-align: center;
+        
     }
+    #vtext h2 {
+        font-size: 7vw;
+        font-weight: 600;
+        color: #095b05e9;
+        font-family: "Poppins", sans-serif;
+    }
+    #text h3{
+        font-size: medium;
+    }
+    
 
     .sea {
         padding: 0%;
