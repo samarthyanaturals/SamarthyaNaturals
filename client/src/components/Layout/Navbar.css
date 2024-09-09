@@ -54,6 +54,7 @@ body {
   font-weight: bold;
   padding-left: 3%;
   padding-bottom: 1.5%;
+  width: 29%;
 }
 
 .menu-icon {
@@ -128,7 +129,8 @@ body {
 
 @media (max-width: 600px) {
   .logo {
-    font-size: 3vh;
+    /* font-size: 3vh; */
+width: 64%;
   }
 
   .menu-icon {

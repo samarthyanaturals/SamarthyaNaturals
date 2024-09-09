@@ -76,7 +76,7 @@ const Header = () => {
           </ul>
           </div>
           
-          <div className="logo" style={{width:'29%'}}>
+          <div className="logo" >
             <NavLink to="/"><img src={logo} width={'100%'}></img></NavLink>
           </div>
 
