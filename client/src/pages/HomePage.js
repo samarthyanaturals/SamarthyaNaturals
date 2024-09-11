@@ -194,10 +194,16 @@ const HomePage = () => {
         </div> */}
 
         {/* ==========Welcome========= */}
-        <video autoPlay muted loop id='vid' style={{ width: '100%', zIndex: '-1' }}>
+        {/* <video autoPlay muted loop id='vid' style={{ width: '100%', zIndex: '-1' }}>
           <source src={V1} />
-        </video>
+        </video> */}
         {/* ===========Welcome End======== */}
+        {/* ============Main Slider======= */}
+        <div style={{ width: '100%', display: 'block' }}>
+          <MainSlider style={{ width: '100vw', padding: 0, margin: 0 }} />
+        </div>
+        {/* =============Main Slider End========= */}
+
         <div style={{ width: '100%' }} id='ProductShow'>
           <img src={home_banner} />
         </div>
@@ -285,9 +291,9 @@ const HomePage = () => {
         {/* ===============Dummy Feature product end============== */}
 
         {/* ============Main Slider======= */}
-        <div style={{ width: '100%', display: 'block' }}>
+        {/* <div style={{ width: '100%', display: 'block' }}>
           <MainSlider style={{ width: '100vw', padding: 0, margin: 0 }} />
-        </div>
+        </div> */}
         {/* =============Main Slider End========= */}
 
 
