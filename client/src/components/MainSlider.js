@@ -14,9 +14,10 @@ const MainSlider = () => {
       style={{
         backgroundColor:'#e2f9ce',
         backgroundImage: `url(${one})`,
-        height: '80vh', // You can adjust the height and other styles as needed
-        backgroundSize: 'contain', // This ensures the image contains the whole div
-        backgroundPosition: 'center',
+        height: '80vh',
+        width:'100vw', // You can adjust the height and other styles as needed
+        backgroundSize: '100vw 80vh', // This ensures the image contains the whole div
+        backgroundPosition: "center",
         backgroundRepeat:'no-repeat' // This centers the image in the div
       }}></div>
         <Carousel.Caption>
@@ -29,9 +30,10 @@ const MainSlider = () => {
       style={{
         backgroundColor:'#e2f9ce',
         backgroundImage: `url(${two})`,
-        height: '80vh', // You can adjust the height and other styles as needed
-        backgroundSize: 'contain', // This ensures the image contains the whole div
-        backgroundPosition: 'center',
+        height: '80vh',
+        width:'100vw', // You can adjust the height and other styles as needed
+        backgroundSize: '100vw 80vh', // This ensures the image contains the whole div
+        backgroundPosition: "center",
         backgroundRepeat:'no-repeat' // This centers the image in the div
       }}></div>
 
@@ -45,9 +47,10 @@ const MainSlider = () => {
       style={{
         backgroundColor:'#e2f9ce',
         backgroundImage: `url(${three})`,
-        height: '80vh', // You can adjust the height and other styles as needed
-        backgroundSize: 'contain', // This ensures the image contains the whole div
-        backgroundPosition: 'center',
+        height: '80vh',
+        width:'100vw', // You can adjust the height and other styles as needed
+        backgroundSize: '100vw 80vh', // This ensures the image contains the whole div
+        backgroundPosition: "center",
         backgroundRepeat:'no-repeat' // This centers the image in the div
       }}></div>
         <Carousel.Caption>
@@ -62,9 +65,10 @@ const MainSlider = () => {
       style={{
         backgroundColor:'#e2f9ce',
         backgroundImage: `url(${four})`,
-        height: '80vh', // You can adjust the height and other styles as needed
-        backgroundSize: 'contain', // This ensures the image contains the whole div
-        backgroundPosition: 'center',
+        height: '80vh',
+        width:'100vw', // You can adjust the height and other styles as needed
+        backgroundSize: '100vw 80vh', // This ensures the image contains the whole div
+        backgroundPosition: "center",
         backgroundRepeat:'no-repeat' // This centers the image in the div
       }}></div>
         <Carousel.Caption>
